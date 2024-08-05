@@ -1,0 +1,203 @@
+body {
+    background-color: #E5E5E5;
+}
+
+
+.container {
+
+    background-color: white;
+    margin: 1%;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+header {
+    margin: 0;
+    background-color: #12213D;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header_log {
+    margin-left: 1%;
+    font-family: jaldi;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FCA311;
+    font-size: 3vw;
+
+}
+
+.container nav {
+
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav a {
+    font-family: jaldi;
+    text-decoration: none;
+    color: #FCA311;
+    font-weight: bold;
+    font-size: 1.8vw;
+}
+
+nav a svg {
+    fill: #FCA311;
+    width: 1vw;
+    max-height: max-content;
+    margin: 0;
+    padding: 0;
+}
+
+.front {
+
+    border-radius: 30% 70% 70% 30% / 30% 33% 67% 70%;
+    background-color: #E5E5E5;
+    margin-bottom: 10vw;
+
+}
+
+.header_button {
+    margin-top: auto;
+    margin-right: 3%;
+    margin-bottom: auto;
+}
+
+.searchBtn {
+    background-color: white;
+    width: 15vw;
+    border-radius: 10px;
+}
+
+.searchBtn svg {
+    float: right;
+    fill: #FCA311;
+    max-width: 2vw;
+}
+
+.homePageTitle {
+    margin-top: 0;
+    font-family: 'Jaldi';
+    text-align: center;
+    font-weight: bold;
+    color: #12213D;
+    font-size: 3vw;
+    text-shadow: 2px 2px #FCA311;
+}
+
+.main_img {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.divider {
+
+    background-color: #FCA311;
+}
+
+.services{
+
+    width:100%;
+}
+
+.cards {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.card {
+ 
+    width: 25%;
+    background-color: white;
+    box-shadow: 6px 6px 0px #c7c7c7,
+        -6px -6px 0px #ffffff;
+        opacity:0.9;
+        transition:0.5s;
+}
+
+.card:hover{
+    opacity:1;
+    transform: translateY(-10px);
+}
+.card .imgContainer{
+    width:100%;
+    margin-bottom:10%;
+}
+
+.card img{
+    width:100%;
+}
+
+.card p{
+    font-family: "Jaldi";
+    font-size:large;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+footer{
+    display:flex;
+    width:100%;
+    background-color:#12213D;
+    color:#FCA311;
+    margin-top:10vh;
+    font-size:1.2vw;
+    font-family: "Jaldi";
+}
+
+.footWrapper{
+
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer li{
+    list-style: none;
+}
+
+
+footer a{
+    text-decoration:none;
+    color:#FCA311;
+
+}
+
+.socials li{
+    display:inline-block;
+    margin-right:1vw;
+    font-size:2vw;
+    transition:0.25s;
+}
+
+.socials li:hover{
+    transform:translateY(-5px);
+}
+
+
+
+footer p{
+    float:right;
+}
