@@ -1,0 +1,16 @@
+
+<link rel = "stylesheet" href = "/css/search.css">
+
+ 
+ <% if(data.length<1){ %>
+    <h1> No results found </h1>
+ <% } %>
+
+ <div class = "content"> 
+    <% for(let i = 0; i<data.length;i++){ %>
+    <div class = "professor">   
+            <h3> <%= data[i].name %> </h3>
+            <h4> <%= data[i].department %> </h4>
+    </div>
+    <%}%>
+ </div>
