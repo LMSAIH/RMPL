@@ -8,9 +8,33 @@
 
  <div class = "content"> 
     <% for(let i = 0; i<data.length;i++){ %>
+      <a class = "prof" href = "/search/<%= data[i]._id %>">
     <div class = "professor">   
-            <h3> <%= data[i].name %> </h3>
-            <h4> <%= data[i].department %> </h4>
+      <div class = "info">
+            <h3 class = "name"> <%= data[i].name %> </h3>
+            <h4 class = "department"> <%= data[i].department %> Department </h4>
+         </div>
+         <div class ="ratings"> 
+            <div class ="rating"><p>Rating</p><p class = "number"><% if(data[i].overall == 0){ %>
+               <%= "N/A" %>
+            <% } else { %>
+               <%= data[i].overall %>
+            <%} %>
+            </p></div>
+            <div class ="difficulty"><p>Difficulty</p><p class = "number"><% if(data[i].difficulty == 0){ %>
+               <%= "N/A" %>
+            <% } else { %>
+               <%= data[i].difficulty %>
+            <%} %></p></div>
+            <div class ="workload"><p>Workload</p><p class = "number"><% if(data[i].workload == 0){ %>
+               <%= "N/A" %>
+            <% } else { %>
+               <%= data[i].workload %>
+            <%} %></p></div>
+         </div>
+         <p> Out of <%= data[i].ratings %> ratings </p>
+
     </div>
+   </a>
     <%}%>
  </div>
