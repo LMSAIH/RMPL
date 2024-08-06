@@ -53,6 +53,10 @@ function addProfessor(){
     Professor.insertMany([{
         name: "Chris Schmidt",
         department: "Physics",
+        ratings: 0,
+        overall:0,
+        difficulty:0,
+        workload:0,
     }]);
 };
 
