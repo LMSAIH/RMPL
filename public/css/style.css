@@ -201,6 +201,10 @@ footer a{
 
 }
 
+.relatedResources li:hover{
+    text-decoration:underline;
+}
+
 .socials li{
     display:inline-block;
     margin-right:1vw;
@@ -211,7 +215,6 @@ footer a{
 .socials li:hover{
     transform:translateY(-5px);
 }
-
 
 
 footer p{

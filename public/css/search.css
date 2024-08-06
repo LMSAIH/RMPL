@@ -1,3 +1,87 @@
-h1{
-    text-align:center;
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+.content{
+    margin-top:3%;
+    font-family: "jaldi";
 }
+
+.content a{
+    text-decoration: none;
+}
+
+.info{
+    max-width:40%;
+
+}
+
+.professor{
+
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    border-bottom-style:solid;
+    color:black;
+    margin-left:10%;
+    margin-right:10%;
+    margin-bottom:0.5%;
+}
+
+.professor:hover{
+    cursor:pointer;
+    background-color:#E5E5E5;
+}
+
+
+.name{
+    text-decoration:none;
+    margin:0;
+    font-size:2vw;
+}
+
+.department{
+    text-decoration:none;
+    margin:0;
+    font-size:1.5vw;
+}
+
+.ratings{
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.rating{
+   
+    width:25%;
+    background-color:#E5E5E5;
+}
+
+.difficulty{
+
+    width:25%;
+    background-color:#E5E5E5;
+}
+
+.workload{
+   
+    width:25%;
+    background-color:#E5E5E5;
+}
+
+.ratings p {
+    font-family:'jaldi';
+    text-align:center;
+    margin-top:0;
+    font-size:large;
+    font-weight: 600;
+   
+}
+
+.ratings .number{
+    font-family:'jaldi';
+    text-align:center;
+    font-size:xx-large;
+    font-weight: bold;
+}
+
