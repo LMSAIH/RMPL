@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
 body {
     background-color: #E5E5E5;
 }
@@ -48,11 +50,19 @@ nav li {
 }
 
 nav a {
-    font-family: jaldi;
+    font-family:'Jaldi';
     text-decoration: none;
     color: #FCA311;
     font-weight: bold;
     font-size: 1.8vw;
+}
+
+nav ul a:active{
+    text-decoration:underline;
+}
+
+nav ul a:hover{
+    text-decoration:underline;
 }
 
 nav a svg {
@@ -77,17 +87,23 @@ nav a svg {
     margin-bottom: auto;
 }
 
-.searchBtn {
-    background-color: white;
-    width: 15vw;
-    border-radius: 10px;
+.search{
+    display:flex;
+    flex-direction:row;
 }
 
-.searchBtn svg {
-    float: right;
-    fill: #FCA311;
-    max-width: 2vw;
+.search input{
+    margin-right:1vw;
+    margin-top:5%;
+    width:20vw;
+    padding:10px;
+    margin-bottom:auto;
+    border-radius:10px;
 }
+
+
+
+
 
 .homePageTitle {
     margin-top: 0;
