@@ -10,6 +10,22 @@ const PostSchema = new Schema({
         type:String,
         required:true
     },
+    ratings:{
+        type:Number,
+        required:true
+    },
+    overall:{
+        type:Number,
+        required:true
+    },
+    difficulty:{
+        type:Number,
+        required:true
+    },
+    workload:{
+        type:Number,
+        required:true
+    },
     createdAt:{
         type:Date,
         default: Date.now
