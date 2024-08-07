@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+.content{
+    margin-left:10%;
+    margin-right:10%;
+    font-family: 'jaldi';
+}
+
+.content .introPhrase{
+    font-size:4vw;
+}
+
+.content .encouragement{
+    font-size:2vw;
+}
+
+.listing{
+    display:flex;
+    flex-direction:column;
+}
