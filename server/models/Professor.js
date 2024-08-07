@@ -26,6 +26,10 @@ const PostSchema = new Schema({
         type:Number,
         required:true
     },
+    subjects:{
+        type:Array,
+        required:true,
+    },
     createdAt:{
         type:Date,
         default: Date.now

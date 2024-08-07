@@ -4,11 +4,8 @@ const router = express.Router();
 
 router.get('', (req,res) =>{
 
-    const locals = {
-        title: "NodeJs Blog",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."
-    }
-    res.render('index', {locals});
+    
+    res.render('index', {title:"RMPL"});
     
 });
 
@@ -24,7 +21,7 @@ router.post('/search', async (req,res) =>{
             ]
         });
         console.log(data);
-        res.render('search', {data});
+        res.render('search', {title: "Search", data});
     } catch(err){
         console.log(err);
     }
@@ -35,14 +32,18 @@ router.get('/addNew', (req,res) =>{
 });
 
 router.get('/about', (req,res) =>{
-    res.render('about');
+    res.render('about', {title:"About"});
+});
+
+router.get('/list', (req,res) => {
+    res.render('list', {title:"Add new instructor"});
 });
 
 router.get('/search/:id', (req,res) => {
     const id = req.params.id;
     Professor.findById(id)
     .then((result) =>{
-        res.render('instructor', {result});
+        res.render('instructor', {title: result.name, result});
     })
     .catch((err) => {
         console.log(err);
