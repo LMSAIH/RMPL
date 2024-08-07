@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/list.css" />
+
+<div class="content">
+  <h1 class = "introPhrase">Unable to find your instructor?</h1>
+
+  <h1 class = "encouragement">List him yourself!</h1>
+
+  <form class = "listing" action = "/addNew" id = "listing" method = "POST"> 
+    Your professor's name: 
+    <input type = "text" id="name" name = "name" maxlength="40" required = "true"> 
+    Choose the department: 
+    <select id = "department" name = "department" required = "true"> 
+        <option value = "Aboriginal Studies"> Aboriginal Studies </option>
+        <option value = "Applied Planning"> Applied Planning </option>
+        <option value = "Art History and Religous Studies"> Art History and Religous Studies </option>
+        <option value = "Asian Studies"> Asian Studies </option>
+        <option value = "Biology"> Biology </option>
+        <option value = "Chemistry"> Chemistry </option>
+        <option value = "Computer Science"> Computer Science </option>
+        <option value = "Criminal Justice"> Criminal Justice </option>
+        <option value = "Design Formation"> Design Formation </option>
+        <option value = "Early Chilhood Education"> Early Chilhood Education </option>
+        <option value = "Economics"> Economics </option>
+        <option value = "English"> English </option>
+        <option value = "Film Arts"> Film Arts </option>
+        <option value = "Fine Arts"> Fine Arts </option>
+        <option value="Geography & Geology">Geography & Geology</option>
+        <option value="Health Sciences">Health Sciences</option>
+        <option value="History, Latin, & Political Science">History, Latin, & Political Science</option>
+        <option value="Interdisciplinary Studies">Interdisciplinary Studies</option>
+        <option value="Journalism">Journalism</option>
+        <option value="Kinesiology">Kinesiology</option>
+        <option value="Library & Information Technology">Library & Information Technology</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Modern Languages">Modern Languages</option>
+        <option value="Nutrition & Food Service Management">Nutrition & Food Service Management</option>
+        <option value="Philosophy">Philosophy</option>
+        <option value="Physics & Astronomy">Physics & Astronomy</option>
+        <option value="Professional Photography">Professional Photography</option>
+        <option value="Psychology">Psychology</option>
+        <option value="Publishing">Publishing</option>
+        <option value="Recreation Studies">Recreation Studies</option>
+        <option value="Social Services">Social Services</option>
+        <option value="Sociology & Anthropology">Sociology & Anthropology</option>
+        <option value="Statistics & Data Analytics">Statistics & Data Analytics</option>
+        <option value="Mathematics & Sciences">Mathematics & Sciences</option>
+        <option value="Nursing">Nursing</option>
+        <option value="Langara School of Management">Langara School of Management</option>
+        <option value="Theatre Arts at Studio 58">Theatre Arts at Studio 58</option>
+        </select>
+        Subjects (Press enter to add another one)
+        <input type = "text" id = "subjects" name = "subjects" maxlength = "15" onkeyup = "newSubject(event)"> 
+  </form>
+  <div class = "subjDisplay" id = "subjDisplay">
+  </div>
+  <input type ="submit" form ="listing"> </input>
+</div>
