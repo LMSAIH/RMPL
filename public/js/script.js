@@ -16,9 +16,10 @@ function newSubject(e) {
     console.log("success");
     subjs.push(subjects.value);
     subjects.value = "";
-
     renderSubjects();
+
   }
+
 }
 
 function renderSubjects() {
@@ -34,6 +35,20 @@ function renderSubjects() {
     });
     display.appendChild(div);
   }
+    
 }
+
+let interval = setInterval(checkInp,1);
+interval();
+
+function checkInp(){
+  if (subjs.length > 0) {
+    subjects.removeAttribute("required");
+  } else {
+    subjects.setAttribute("required","");
+  }
+}
+
+
 
 subjects.addEventListener("keydown", newSubject);

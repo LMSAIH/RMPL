@@ -4,17 +4,83 @@
     margin-left:10%;
     margin-right:10%;
     font-family: 'jaldi';
+
 }
 
 .content .introPhrase{
     font-size:4vw;
+    margin-bottom:0;
 }
 
 .content .encouragement{
+    margin-bottom:0;
     font-size:2vw;
 }
 
 .listing{
     display:flex;
     flex-direction:column;
+    font-family:'jaldi';
+    font-size:large;
+    width:40%;
+    
 }
+
+.listing input{
+    padding:5px;
+    border-color:#FCA311;
+    border-style:solid;
+    border-radius:5px;
+}
+
+.listing select{
+    padding:5px;
+    border-width: 2px;
+    border-color:#FCA311;
+    border-style:solid;
+    border-radius:5px;
+}
+
+.subjDisplay{
+    margin-top:1%;
+    display:flex;
+    flex-direction: row;
+}
+
+.subjDisplay > div{
+    background-color:#EAEAEA;
+    border-style:solid;
+    border-radius:10px;
+    margin:0;
+    padding:3px;
+    margin-right:0.5%;
+    transition:0.2s;
+}
+
+.subjDisplay > div:hover{
+    cursor:pointer;
+    background-color:red;
+}
+
+.subjDisplay p{
+    margin:0;
+    font-size:medium;
+}
+#submit{
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+    transition:0.2s;
+}
+
+#submit:hover{
+    background-color:green;
+}
+
+.formWrapper{
+    display:flex;
+    flex-direction: row;
+
+}
+
