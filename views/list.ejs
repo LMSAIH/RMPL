@@ -7,7 +7,7 @@
 
   <div class = "formWrapper">
 
-  <form class = "listing" action = "/addNew" id = "listing" method = "POST"> 
+  <form class = "listing"  id = "listing"> 
     Your professor's name: 
     <input type = "text" id="name" name = "name" maxlength="40" required = "true" placeholder = "Mark Thompson..."> 
     Choose the department: 
@@ -50,12 +50,18 @@
         <option value="Langara School of Management">Langara School of Management</option>
         <option value="Theatre Arts at Studio 58">Theatre Arts at Studio 58</option>
         </select>
+        <input type = "hidden" name = "ratings" id = "ratings" value = 0> 
+        <input type = "hidden" name = "overall" id = "overall" value = 0> 
+        <input type = "hidden" name = "difficulty" id = "difficulty" value = 0> 
+        <input type = "hidden" name = "workload" id = "workload" value = 0> 
         Subjects (Press enter to add another one)
         <input type = "text" id = "subjects" name = "subjects" maxlength = "15" onkeyup = "newSubject(event)" placeholder = "CPSC 1150..." required> 
         <div class = "subjDisplay" id = "subjDisplay">   </div>
-        <input type ="submit" form ="listing" id ="submit"> </input>
+        <input type ="submit" form ="listing" id ="submit" disabled> </input>
   </form>
 
   <img src = "/images/listingPage.svg" alt = "listing image"> 
 </div>
 </div>
+
+<script src = "/js/list.js" defer ></script>
