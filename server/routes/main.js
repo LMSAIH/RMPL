@@ -25,10 +25,6 @@ router.post('/search', async (req,res) =>{
     } catch(err){
         console.log(err);
     }
-})
-
-router.get('/addNew', (req,res) =>{
-    addProfessor();
 });
 
 router.get('/about', (req,res) =>{
@@ -37,6 +33,28 @@ router.get('/about', (req,res) =>{
 
 router.get('/list', (req,res) => {
     res.render('list', {title:"Add new instructor"});
+});
+
+router.post('/newInstructor',(req,res) =>{
+    const instructorInfo = req.body;
+    console.log("received data", instructorInfo);
+    Professor.insertMany([{
+        name: instructorInfo.name,
+        department: instructorInfo.department,
+        ratings: instructorInfo.ratings,
+        overall: instructorInfo.overall,
+        difficulty: instructorInfo.difficulty,
+        workload: instructorInfo.workload,
+        subjects:instructorInfo.subjects,
+    }])
+    .then((result) =>{
+        console.log("success");
+        res.json({ redirect: "/" });
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json({error: "an error ocurred"});
+    });
 });
 
 router.get('/search/:id', (req,res) => {
@@ -49,16 +67,5 @@ router.get('/search/:id', (req,res) => {
         console.log(err);
     });
 });
-
-function addProfessor(){
-    Professor.insertMany([{
-        name: "Chris Schmidt",
-        department: "Physics",
-        ratings: 0,
-        overall:0,
-        difficulty:0,
-        workload:0,
-    }]);
-};
 
 module.exports = router;
