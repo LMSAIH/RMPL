@@ -10,7 +10,7 @@
 }
 
 .info{
-    max-width:40%;
+    width:40%;
 
 }
 
@@ -36,6 +36,7 @@
     text-decoration:none;
     margin:0;
     font-size:2vw;
+
 }
 
 .department{
