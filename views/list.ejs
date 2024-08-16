@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/list.css" />
 
+<% if (isAuthenticated == true){ %>
 <div class="content">
   <h1 class = "introPhrase">Unable to find your instructor?</h1>
 
@@ -63,5 +64,17 @@
   <img src = "/images/listingPage.svg" alt = "listing image"> 
 </div>
 </div>
-
 <script src = "/js/list.js" defer ></script>
+
+<%} else { %>
+
+  <h1> Whoops! You need to be logged in to list an instructor</h1>
+ <div class = "but"> <button id = "Login" onclick = "redirect()">Login!</button></div>
+ <script>
+  
+  function redirect(){
+    window.location.href = "/login";
+  }
+ </script>
+
+<%}%>
