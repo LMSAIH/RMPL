@@ -23,6 +23,16 @@ header {
     justify-content: space-between;
 }
 
+header p {
+    color: #FCA311;
+    font-family: jaldi;
+    font-weight: bold;
+    font-size:1.8vw;
+    margin-top:auto;
+    margin-bottom:auto;
+
+}
+
 .header_log {
     margin-left: 1%;
     font-family: jaldi;

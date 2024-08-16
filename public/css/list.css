@@ -1,87 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
 
-.content{
-    margin-left:10%;
-    margin-right:10%;
+h1 {
+    text-align: center;
+}
+
+.but {
+    margin-top:5%;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Login {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'jaldi';
+    font-size:1.8vw;
+    font-weight:bold;
+    padding: 10px 5vw 10px 5vw;
+    background-color:#FCA311;
+    border:none;
+    border-radius:5px;
+    box-shadow: 1px 1px black;
+    transition:0.5s;
+
+}
+
+#Login:hover{
+    cursor:pointer;
+    padding: 10px 4.8vw 10spx 4.8vw;
+}
+
+.content {
+
     font-family: 'jaldi';
 
 }
 
-.content .introPhrase{
-    font-size:4vw;
-    margin-bottom:0;
+.content .introPhrase {
+    font-size: 4vw;
+    margin-bottom: 0;
 }
 
-.content .encouragement{
-    margin-bottom:0;
-    font-size:2vw;
+.content .encouragement {
+    margin-bottom: 0;
+    font-size: 2vw;
 }
 
-.listing{
-    display:flex;
-    flex-direction:column;
-    font-family:'jaldi';
-    font-size:large;
-    width:40%;
-    
+.listing {
+    display: flex;
+    flex-direction: column;
+    font-family: 'jaldi';
+    font-size: large;
+    width: 40%;
+
 }
 
-.listing input{
-    padding:5px;
-    border-color:#FCA311;
-    border-style:solid;
-    border-radius:5px;
+.listing input {
+    padding: 5px;
+    border-color: #FCA311;
+    border-style: solid;
+    border-radius: 5px;
 }
 
-.listing select{
-    padding:5px;
+.listing select {
+    padding: 5px;
     border-width: 2px;
-    border-color:#FCA311;
-    border-style:solid;
-    border-radius:5px;
+    border-color: #FCA311;
+    border-style: solid;
+    border-radius: 5px;
 }
 
-.subjDisplay{
-    margin-top:1%;
-    display:flex;
+.subjDisplay {
+    margin-top: 1%;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.subjDisplay > div{
-    background-color:#EAEAEA;
-    border-style:solid;
-    border-radius:10px;
-    margin:0;
-    padding:3px;
-    margin-right:0.5%;
-    transition:0.2s;
+.subjDisplay>div {
+    background-color: #EAEAEA;
+    border-style: solid;
+    border-radius: 10px;
+    margin: 0;
+    padding: 3px;
+    margin-right: 0.5%;
+    transition: 0.2s;
 }
 
-.subjDisplay > div:hover{
-    cursor:pointer;
-    background-color:red;
+.subjDisplay>div:hover {
+    cursor: pointer;
+    background-color: red;
 }
 
-.subjDisplay p{
-    margin:0;
-    font-size:medium;
+.subjDisplay p {
+    margin: 0;
+    font-size: medium;
 }
-#submit{
-    margin-top:5%;
+
+#submit {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    transition: 0.2s;
+}
+
+#submit:hover {
+    background-color: green;
+}
+
+.formWrapper {
     margin-left:auto;
     margin-right:auto;
-    width:50%;
-    transition:0.2s;
-}
-
-#submit:hover{
-    background-color:green;
-}
-
-.formWrapper{
-    display:flex;
+    margin-top:5%;
+    width:90%;
+    display: flex;
     flex-direction: row;
 
 }
-
