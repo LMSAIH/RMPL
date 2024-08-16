@@ -40,6 +40,7 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 2%;
+    
 }
 
 .forms .subm{
@@ -67,7 +68,38 @@
 }
 
 .forms form input {
+    font-family:j'aldi';
+    font-size:1.4vw;
     border-radius: 9px;
     width: 80%;
     padding: 0.6vw;
+}
+
+form .checkboxes{
+
+    overflow:hidden;
+    width:100%;
+    margin:0;
+    height:0;
+    font-size:medium;
+    display:flex;
+    flex-direction:column;
+    transition:4s;
+
+}
+
+.checkboxes > div{
+   display:flex;
+   flex-direction:row;
+   justify-content:start;
+}
+
+.checkboxes p{
+    font-family: 'jaldi';
+    margin:0;
+}
+
+
+.checkboxes.displaying{
+    height:fit-content;
 }
