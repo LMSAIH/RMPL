@@ -2,12 +2,71 @@ const express = require("express");
 const Professor = require("../models/Professor");
 const User = require("../models/User");
 const router = express.Router();
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const jwtSecret = process.env.JWT_SECRET;
 
-router.get("", (req, res) => {
-  res.render("index", { title: "RMPL" });
+//Password protect
+const authMiddleWare = (req,res,next) =>{
+  const token = req.cookies.token;
+
+  if(!token){
+    return res.status(401).json({message: 'Unathorized'});
+  }
+
+  try{
+    const decoded = jwt.verify(token, jwtSecret);
+    req.userId = decoded.userId;
+    next();
+  } catch(err){
+    res.status(401).json({message: "Unathorized"})
+  }
+
+}
+
+const checkAuth = async (req,res,next) =>{
+  const token = req.cookies.token;
+
+  if(!token){
+    req.isAuthenticated = false;
+    //Nexsts are important lmao
+    next();
+
+  } else {
+    try{
+      const decoded = jwt.verify(token,jwtSecret);
+      req.isAuthenticated = true;
+      req.userId = decoded.userId;
+      console.log(decoded);
+      const user = await User.findById(req.userId);
+
+      if(user){
+        req.username = user.username;
+      }
+      next();
+    } catch(err){
+      req.isAuthenticated = false;
+      next();
+    }
+  }
+
+  
+}
+
+router.get('/admin', authMiddleWare, async (req,res) => {
+  try{
+    res.render('admin', {title: "Admin", });
+  } catch(err){
+    console.log(err);
+  }
 });
 
-router.post("/search", async (req, res) => {
+router.get("/", checkAuth,  (req, res) => {
+  
+  res.render('index', {title: "RMPL", isAuthenticated: req.isAuthenticated, username: req.username});
+});
+
+router.post("/search", checkAuth, async (req, res) => {
   try {
     let searchTerm = req.body.searchTerm;
     //Regex to remove special characters
@@ -17,62 +76,78 @@ router.post("/search", async (req, res) => {
       $or: [{ name: { $regex: new RegExp(searchNoSpecialChar, "i") } }],
     });
     console.log(data);
-    res.render("search", { title: "Search", data });
+    res.render("search", { title: "Search", data, isAuthenticated: req.isAuthenticated, username: req.username });
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get("/about", (req, res) => {
-  res.render("about", { title: "About" });
+router.get("/about", checkAuth, (req, res) => {
+  res.render("about", { title: "About", isAuthenticated: req.isAuthenticated, username: req.username });
 });
 
-router.get("/list", (req, res) => {
-  res.render("list", { title: "Add new instructor" });
+router.get("/list",checkAuth, (req, res) => {
+  res.render("list", { title: "Add new instructor", isAuthenticated: req.isAuthenticated, username: req.username });
 });
 
-router.get("/login", (req, res) => {
-  res.render("logIn", { failedToLog: false });
+router.get("/login",checkAuth, (req, res) => {
+  res.render("logIn", { title: "login", failedToLog: false, isAuthenticated: req.isAuthenticated, username: req.username });
 });
 
-router.post("/authenticate", async (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+router.post("/authenticate", checkAuth, async (req, res) => {
+  
+  try{
 
-  try {
-    User.findOne({
-      $or: [{ username: username }],
-    })
-    .then((result) =>{
-    
-        if(result.password == password){
-            res.render("index", {title:'RMPL'});
-            console.log('successfully logged In');
-        }
+    const username = req.body.username;
+    const password = req.body.password;
 
-    })
-    .catch((err) =>{
-        res.render('logIn', {failedToLog:true});
-    });
+    const user = await User.findOne({username});
 
-  } catch (err) {
-    console.log(err);
+    if(!user){
+     return res.render('logIn', {title:'login', isValidLogin: false, isAuthenticated: req.isAuthenticated, username: req.username })
+    }
+
+    const isPasswordValid = await bcrypt.compare(password,user.password);
+
+    if(!isPasswordValid){
+      return res.render('logIn', {title:'login', isValidLogin: false, isAuthenticated: req.isAuthenticated, username: req.username })
+    }
+
+    const token = jwt.sign({userId: user._id}, jwtSecret);
+    res.cookie('token',token,{httpOnly: true});
+
+    res.redirect('/');
+
+  } catch(err){
+    res.render('logIn', {title: "login", isValidLogin: false,isAuthenticated: req.isAuthenticated, username: req.username })
   }
 });
 
-router.post("/createAccount", (req, res) => {
+router.post("/createAccount", checkAuth, async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const hashPassword = await bcrypt.hash(password, 10);
 
-  User.insertMany([
-    {
-      username: username,
-      password: password,
-    },
-  ]);
+  try{
+    const user = await User.create({ username, password: hashPassword});
+    res.redirect('/logIn');
+  } catch(err){
+    if(err.code === 11000){
+      return res.render('logIn', {title: "login", isValidSignIn: false, alreadyInUse: true, isAuthenticated: req.isAuthenticated, username: req.username });
+
+    }
+    res.render('logIn', {title: "login", isValidSignIn: false, alreadyInUse: false, isAuthenticated: req.isAuthenticated, username: req.username });
+  }
+
 });
 
-router.post("/newInstructor", (req, res) => {
+router.get("/logout", checkAuth,(req, res) => {
+
+  res.clearCookie('token');
+  res.redirect('/');
+});
+
+router.post("/newInstructor", checkAuth,(req, res) => {
   const instructorInfo = req.body;
   console.log("received data", instructorInfo);
   Professor.insertMany([
@@ -96,11 +171,11 @@ router.post("/newInstructor", (req, res) => {
     });
 });
 
-router.get("/search/:id", (req, res) => {
+router.get("/search/:id", checkAuth, (req, res) => {
   const id = req.params.id;
   Professor.findById(id)
     .then((result) => {
-      res.render("instructor", { title: result.name, result });
+      res.render("instructor", { title: result.name, result, isAuthenticated: req.isAuthenticated, username: req.username });
     })
     .catch((err) => {
       console.log(err);
