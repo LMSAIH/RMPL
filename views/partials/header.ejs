@@ -1,6 +1,9 @@
 
 <header class = "header"> 
 <a href = "/" class = "header_log"> RMPL </a>
+<% if (isAuthenticated == true){ %>
+    <p>Logged as <%= username %> </p>
+<%}%>
 <nav class = "header_nav">
     <ul>
         <li>
