@@ -156,6 +156,7 @@ router.post("/newInstructor", checkAuth,(req, res) => {
       department: instructorInfo.department,
       ratings: instructorInfo.ratings,
       overall: instructorInfo.overall,
+      quality: instructorInfo.quality,
       difficulty: instructorInfo.difficulty,
       workload: instructorInfo.workload,
       subjects: instructorInfo.subjects,
@@ -180,6 +181,18 @@ router.get("/search/:id", checkAuth, (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+router.get("/rate/:id", checkAuth, (req,res) => {
+  //get the id from the url
+  const id = req.params.id;
+  Professor.findById(id)
+  .then((result) =>{
+    res.render('rate', {title: result.name, result, isAuthenticated: req.isAuthenticated, username: req.username});
+  }) 
+  .catch((err) => {
+    console.log(err);
+  });
 });
 
 module.exports = router;
