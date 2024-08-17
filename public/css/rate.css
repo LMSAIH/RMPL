@@ -1,0 +1,76 @@
+.innerContent {
+    font-family: 'jaldi';
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.innerContent h1 {
+    font-size: 3vw;
+}
+
+#rate{
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    background-image: url("/images/give_review.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+#rate h3{
+    margin:0;
+    margin-right:4vw;
+    margin-left:3vw;
+    font-size:2vw;
+}
+
+.quality,
+.difficulty,
+.workload {
+    margin-top:0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.quality input,
+.difficulty input,
+.workload input {
+    display: none;
+}
+
+.quality label,
+.difficulty label,
+.workload label {
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.quality label:hover,
+.quality label:hover~label,
+.difficulty label:hover,
+.difficulty label:hover~label,
+.workload label:hover,
+.workload label:hover~label {
+    color: gold;
+}
+
+.quality input:checked~label,
+.difficulty input:checked~label,
+.workload input:checked~label {
+    color: gold;
+}
+
+#rate textarea{
+    width:40%;
+    margin-bottom:5%;
+}
+
+#rate .comment{
+    margin-left:0;
+    text-align:left;
+}

@@ -11,6 +11,12 @@
     margin-bottom:0;
 }
 
+.top{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
 .nameAndRating{
     display:flex;
     flex-direction: row;
@@ -33,5 +39,29 @@
     font-style:italic;
 }
 
+.rate h3{
+    font-size:2vw;
+}
 
+#leaveRating {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'jaldi';
+    font-size:1.8vw;
+    font-weight:bold;
+    padding: 10px 5vw 10px 5vw;
+    background-color:#FCA311;
+    border:none;
+    border-radius:5px;
+    box-shadow: 1px 1px black;
+    transition:0.5s;
+    text-decoration: none;
+    color:black;
+
+}
+
+#leaveRating:hover{
+    cursor:pointer;
+    padding: 10px 4.8vw 10px 4.8vw;
+}
 
