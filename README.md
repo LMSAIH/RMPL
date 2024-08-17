@@ -1,1 +1,1 @@
-This is a simple project ---- too lazy will add more lates
+This is an internal application for Langara College, which has the objective of listing professors so the students can rate them based on their experience, and their performance. It has many features which are currently and will continue to be implemented. 
