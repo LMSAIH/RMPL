@@ -1,13 +1,24 @@
 <link rel="stylesheet" href="/css/instructor.css" />
+
 <div class="innerContent">
-  <div class="instructorInfo">
-    <div class="nameAndRating">
-      <h1><%= result.name%></h1>
-      <h2 class="overall">
-        <% if (result.overall == 0){%> N/A <%} else { %> <%= result.overall %>
-        <%}%>
-      </h2>
+  <div class="top">
+    <div class="instructorInfo">
+      <div class="nameAndRating">
+        <h1><%= result.name%></h1>
+        <h2 class="overall">
+          <% if (result.overall == 0){%> N/A <%} else { %> <%= result.overall %>
+          <%}%>
+        </h2>
+      </div>
+      <h2 class="department"><%= result.department %> Department</h2>
     </div>
-    <h2 class = "department"><%= result.department %> Department</h2>
+    <div class="rate"><h3>Want to add something? </h3><a id = "leaveRating" href = "<% if(isAuthenticated == true){%>
+        <%= `/rate/${result._id}` %> 
+        <% } else { %>
+           <%= '/logIn' %> 
+       <% } %>"> Leave a Rating </a> 
+    </div>
   </div>
 </div>
+
+<script src = "/js/instructor.js" defer></script>
