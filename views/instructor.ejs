@@ -11,6 +11,11 @@
         </h2>
       </div>
       <h2 class="department"><%= result.department %> Department</h2>
+      <div class = "subjects"> 
+        <% for(let i = 0; i<result.subjects.length;i++){ %>
+        <div class = "subject"><p> <%=result.subjects[i] %></p></div>
+        <%}%>
+      </div>
     </div>
     <div class="rate"><h3>Want to add something? </h3><a id = "leaveRating" href = "<% if(isAuthenticated == true){%>
         <%= `/rate/${result._id}` %> 

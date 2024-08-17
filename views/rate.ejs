@@ -2,12 +2,25 @@
 <div class="innerContent">
   <h1>Leave your rating for <%= result.name %></h1>
 
-  <form id="rate">
+  <h2>Can't seem to find your subject? Add it!</h2>
+  <form id="subject" action="/addSubject" method="POST">
+    <input type="text" name="subject" id="subject" placeholder="CPSC 1150..." required minlength = "4" maxlength="14"/>
+    <input type="submit" value="add it!" id = "submitSubject" />
+    <input type = "hidden" name = "profId" value = "<%= result._id %>"> 
+  </form>
 
+  <form id="rate" action = "/addReview" method = "POST">
 
-    <h3> Quality </h3>
+    <h3 class = "subj"> Choose your subject </h3>
+    <select>
+      <% for (let i = 0; i<result.subjects.length; i++){ %>
+            <option name = "subject" id = "name"> <%= result.subjects[i] %> </option>
+      <%}%>
+    </select>
+
+    <h3>Quality</h3>
     <div class="quality">
-      <input type="radio" id="star5" name="quality" value="5" required/>
+      <input type="radio" id="star5" name="quality" value="5" required />
       <label for="star5">&#9733;</label>
       <input type="radio" id="star4" name="quality" value="4" />
       <label for="star4">&#9733;</label>
@@ -19,37 +32,37 @@
       <label for="star1">&#9733;</label>
     </div>
 
-    <h3> Difficulty </h3>
+    <h3>Difficulty</h3>
     <div class="difficulty">
-        <input type="radio" id="1star5" name="difficulty" value="5" required />
-        <label for="1star5">&#9733;</label>
-        <input type="radio" id="1star4" name="difficulty" value="4" />
-        <label for="1star4">&#9733;</label>
-        <input type="radio" id="1star3" name="difficulty" value="3" />
-        <label for="1star3">&#9733;</label>
-        <input type="radio" id="1star2" name="difficulty" value="2" />
-        <label for="1star2">&#9733;</label>
-        <input type="radio" id="1star1" name="difficulty" value="1" />
-        <label for="1star1">&#9733;</label>
-      </div>
+      <input type="radio" id="1star5" name="difficulty" value="5" required />
+      <label for="1star5">&#9733;</label>
+      <input type="radio" id="1star4" name="difficulty" value="4" />
+      <label for="1star4">&#9733;</label>
+      <input type="radio" id="1star3" name="difficulty" value="3" />
+      <label for="1star3">&#9733;</label>
+      <input type="radio" id="1star2" name="difficulty" value="2" />
+      <label for="1star2">&#9733;</label>
+      <input type="radio" id="1star1" name="difficulty" value="1" />
+      <label for="1star1">&#9733;</label>
+    </div>
 
-      <h3> Workload </h3>
-      <div class="workload">
-        <input type="radio" id="2star5" name="workload" value="5" required />
-        <label for="2star5">&#9733;</label>
-        <input type="radio" id="2star4" name="workload" value="4" />
-        <label for="2star4">&#9733;</label>
-        <input type="radio" id="2star3" name="workload" value="3" />
-        <label for="2star3">&#9733;</label>
-        <input type="radio" id="2star2" name="workload" value="2" />
-        <label for="2star2">&#9733;</label>
-        <input type="radio" id="2star1" name="workload" value="1" />
-        <label for="2star1">&#9733;</label>
-      </div>
+    <h3>Workload</h3>
+    <div class="workload">
+      <input type="radio" id="2star5" name="workload" value="5" required />
+      <label for="2star5">&#9733;</label>
+      <input type="radio" id="2star4" name="workload" value="4" />
+      <label for="2star4">&#9733;</label>
+      <input type="radio" id="2star3" name="workload" value="3" />
+      <label for="2star3">&#9733;</label>
+      <input type="radio" id="2star2" name="workload" value="2" />
+      <label for="2star2">&#9733;</label>
+      <input type="radio" id="2star1" name="workload" value="1" />
+      <label for="2star1">&#9733;</label>
+    </div>
 
-      <h3 class = "comment"> Write a comment! </h3>
-      <textarea name = "comments" maxlength="200" rows = "6"> </textarea>
-      <input type = "submit" value = "send"> 
-  
+    <h3 class="comment">Write a comment!</h3>
+    <textarea name="comments" maxlength="200" rows="6" name = "content"> </textarea>
+    <input type="submit" value="send" />
+    <input type = "hidden" value = "<%=result._id %>" name = "profId">
   </form>
 </div>
