@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/rate.css" />
+<div class="innerContent">
+  <h1>Leave your rating for <%= result.name %></h1>
+
+  <form id="rate">
+
+
+    <h3> Quality </h3>
+    <div class="quality">
+      <input type="radio" id="star5" name="quality" value="5" required/>
+      <label for="star5">&#9733;</label>
+      <input type="radio" id="star4" name="quality" value="4" />
+      <label for="star4">&#9733;</label>
+      <input type="radio" id="star3" name="quality" value="3" />
+      <label for="star3">&#9733;</label>
+      <input type="radio" id="star2" name="quality" value="2" />
+      <label for="star2">&#9733;</label>
+      <input type="radio" id="star1" name="quality" value="1" />
+      <label for="star1">&#9733;</label>
+    </div>
+
+    <h3> Difficulty </h3>
+    <div class="difficulty">
+        <input type="radio" id="1star5" name="difficulty" value="5" required />
+        <label for="1star5">&#9733;</label>
+        <input type="radio" id="1star4" name="difficulty" value="4" />
+        <label for="1star4">&#9733;</label>
+        <input type="radio" id="1star3" name="difficulty" value="3" />
+        <label for="1star3">&#9733;</label>
+        <input type="radio" id="1star2" name="difficulty" value="2" />
+        <label for="1star2">&#9733;</label>
+        <input type="radio" id="1star1" name="difficulty" value="1" />
+        <label for="1star1">&#9733;</label>
+      </div>
+
+      <h3> Workload </h3>
+      <div class="workload">
+        <input type="radio" id="2star5" name="workload" value="5" required />
+        <label for="2star5">&#9733;</label>
+        <input type="radio" id="2star4" name="workload" value="4" />
+        <label for="2star4">&#9733;</label>
+        <input type="radio" id="2star3" name="workload" value="3" />
+        <label for="2star3">&#9733;</label>
+        <input type="radio" id="2star2" name="workload" value="2" />
+        <label for="2star2">&#9733;</label>
+        <input type="radio" id="2star1" name="workload" value="1" />
+        <label for="2star1">&#9733;</label>
+      </div>
+
+      <h3 class = "comment"> Write a comment! </h3>
+      <textarea name = "comments" maxlength="200" rows = "6"> </textarea>
+      <input type = "submit" value = "send"> 
+  
+  </form>
+</div>
