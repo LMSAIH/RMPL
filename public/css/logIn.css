@@ -45,6 +45,7 @@
     
 }
 
+
 .forms .subm{
     margin-top:3%;
     background-color:#FCA311;
@@ -105,3 +106,38 @@ form .checkboxes{
 .checkboxes.displaying{
     height:fit-content;
 }
+
+.logout{
+    text-decoration:none;
+    color:black;
+    font-family:'jaldi';
+    font-size:2vw;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 1%;
+    height: max-content;
+    font-weight:bold;
+    transition:0.25s;
+}
+
+.logout:hover{
+    background-color:#eaeaea;
+}
+
+.cardTop{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.cardTop svg{
+    margin-top:auto;
+    margin-bottom:auto;
+    width:3vw;
+    height:3vw;
+}
+

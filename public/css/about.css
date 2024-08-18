@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+
+.main{
+    font-family: 'jaldi';
+}
+.top{
+    margin:auto;
+    margin-top:5%;
+    text-align:center;
+    width:fit-content;
+    background-color: white;
+    box-shadow: 2vw 2vw 0px #FCA311,
+        -2vw -2vw 0px #FCA311;
+        opacity:0.9;
+        transition:0.5s;
+}
+
+.top h1{
+    background-color: #12213D;
+    color:white;
+    text-shadow: 2px 2px #FCA311;
+    font-size:4vw;
+    padding:1vw;
+}
+
