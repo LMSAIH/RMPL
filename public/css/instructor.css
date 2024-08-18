@@ -92,3 +92,41 @@
 .subject:hover{
     opacity:0.9;
 }
+
+.otherValues{
+    display:flex;
+    flex-direction:row;
+}
+
+.otherValues > div{
+
+    margin-top:5%;
+    margin-right:10%;
+    width: 25%;
+    background-color: white;
+    box-shadow: 6px 6px 0px #c7c7c7,
+        -6px -6px 0px #ffffff;
+        opacity:0.9;
+        transition:0.5s;
+}
+
+.imageContainer{
+    width:100%;
+
+}
+
+.imageContainer img{
+    width:100%;
+
+}
+
+.comment{
+   
+    width: 25%;
+    background-color: white;
+    box-shadow: 6px 6px 0px #c7c7c7,
+        -6px -6px 0px #ffffff;
+        opacity:0.9;
+        transition:0.5s;
+}
+
