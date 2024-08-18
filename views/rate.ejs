@@ -12,9 +12,9 @@
   <form id="rate" action = "/addReview" method = "POST">
 
     <h3 class = "subj"> Choose your subject </h3>
-    <select>
+    <select name = "subject" required>
       <% for (let i = 0; i<result.subjects.length; i++){ %>
-            <option name = "subject" id = "name"> <%= result.subjects[i] %> </option>
+            <option value = "<%= result.subjects[i] %>"> <%= result.subjects[i] %> </option>
       <%}%>
     </select>
 

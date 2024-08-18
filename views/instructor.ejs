@@ -6,7 +6,7 @@
       <div class="nameAndRating">
         <h1><%= result.name%></h1>
         <h2 class="overall">
-          <% if (result.overall == 0){%> N/A <%} else { %> <%= result.overall %>
+          <% if (result.overall == 0){%> N/A <%} else { %> <%= Number.parseFloat(result.overall/result.ratings).toFixed(1) %>/5.0
           <%}%>
         </h2>
       </div>
@@ -23,6 +23,39 @@
            <%= '/logIn' %> 
        <% } %>"> Leave a Rating </a> 
     </div>
+  </div>
+
+  <div class = "otherValues">
+    <div class = "difficulty">
+      <div class = "imageContainer">
+      <img class = "cardImage" alt = "difficult" src = "/images/difficulty.svg"> 
+    </div>
+    <h3 class = "tag"> Difficulty </h3>
+    <p class = "number">  <% if (result.difficulty == 0){%> N/A <%} else { %> <%= Number.parseFloat(result.difficulty/result.ratings).toFixed(1) %>/5.0
+      <%}%> </p>
+    </div>
+    <div class = "workload">
+      <div class = "imageContainer">
+      <img class = "cardImage" alt = "workload" src = "/images/workload.svg"> 
+    </div>
+    <h3 class = "tag"> Workload </h3>
+    <p class = "number">  <% if (result.workload == 0){%> N/A <%} else { %> <%= Number.parseFloat(result.workload/result.workload).toFixed(1) %>/5.0
+      <%}%> </p>
+    </div>
+  </div>
+
+  <h2> Comment Section </h2>
+  <div class = "comments"> 
+
+    <% for(let i = 0; i<result.comments.length; i++){%>
+      
+    <div class = "comment"> 
+      <h3 class = "author"> <%= result.comments[i].author %> &#x2022; <span class = 'subject'><%= result.comments[i].subject %></span></h3>
+
+      <p class = 'date'> <%= result.comments[i].date %> </p>
+      <p class = "content"> <%= result.comments[i].content %> </p>
+    </div>
+  <%}%>
   </div>
 </div>
 
