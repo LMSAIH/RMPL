@@ -270,7 +270,7 @@ router.post('/addReview', checkAuth, (req,res) => {
   const commentor = req.username;
   const subject = req.body.subject;
   const content = req.body.comments;
-  const overall = (parseFloat(req.body.quality) + parseFloat(req.body.difficulty) + parseFloat(req.body.workload))/3;
+  const overall = (parseFloat(req.body.quality));
   const comment = {
 
     author: commentor,
