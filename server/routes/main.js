@@ -265,6 +265,38 @@ router.post("/addSubject", checkAuth, (req, res) => {
 
 router.post('/addReview', checkAuth, (req,res) => {
   console.log(req.body);
+
+  const profId = req.body.profId;
+  const commentor = req.username;
+  const subject = req.body.subject;
+  const content = req.body.comments;
+  const overall = (parseFloat(req.body.quality) + parseFloat(req.body.difficulty) + parseFloat(req.body.workload))/3;
+  const comment = {
+
+    author: commentor,
+    subject: subject,
+    content: content,
+    
+  }
+  Professor.findByIdAndUpdate(profId,
+    {
+      $inc: {
+        quality: parseFloat(req.body.quality),
+        difficulty: parseFloat(req.body.difficulty),
+        workload: parseFloat(req.body.workload),
+        ratings: 1,
+        overall: overall,
+      },
+
+      $push: { comments: comment },
+    },
+    { new: true }) //this will return the updated object
+  .then((result) => {
+    res.redirect(`/search/${profId}`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
   
 });
 
