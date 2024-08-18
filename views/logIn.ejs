@@ -10,7 +10,28 @@
 <div class="forms">
   <div class="formContainer">
     <form action="/authenticate" method="POST" id="loginForm">
-      <h2>Log in</h2>
+      <div class="cardTop">
+        <h2>Log in</h2>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-login"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M15 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+          />
+          <path d="M21 12h-13l3 -3" />
+          <path d="M11 15l-3 -3" />
+        </svg>
+      </div>
       <label for="username">Username</label>
       <input
         type="text"
@@ -39,14 +60,45 @@
   </div>
 
   <div class="formContainer">
-    <form action="/createAccount" method="POST" id = "signInForm">
-      <h2>Sign In</h2>
+    <form action="/createAccount" method="POST" id="signInForm">
+      <div class="cardTop">
+        <h2>Sign In</h2>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-door-enter"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M13 12v.01" />
+          <path d="M3 21h18" />
+          <path d="M5 21v-16a2 2 0 0 1 2 -2h6m4 10.5v7.5" />
+          <path d="M21 7h-7m3 -3l-3 3l3 3" />
+        </svg>
+      </div>
       <label for="username">Username</label>
-      <input type="text" placeholder="Your username" name="username" id = "signInUsername" minlength = "8" maxlength = "15"  pattern="[a-zA-Z0-9]+" required />
+      <input
+        type="text"
+        placeholder="Your username"
+        name="username"
+        id="signInUsername"
+        minlength="8"
+        maxlength="15"
+        pattern="[a-zA-Z0-9]+"
+        required
+      />
       <label for="password"> Password </label>
-      <div class="checkboxes" id = "checkboxes">
-        <div class="upperCase" id = upperCase>
-          <svg id = "checked" class = "checked"
+      <div class="checkboxes" id="checkboxes">
+        <div class="upperCase" id="upperCase">
+          <svg
+            id="checked"
+            class="checked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -63,7 +115,9 @@
               d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"
             ></path>
           </svg>
-          <svg id = "notChecked" class = "notChecked"
+          <svg
+            id="notChecked"
+            class="notChecked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -87,7 +141,9 @@
           <p>Contains an uppercase letter</p>
         </div>
         <div id="letters8" class="letters8">
-          <svg id = "checked" class="checked" 
+          <svg
+            id="checked"
+            class="checked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -104,7 +160,9 @@
               d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"
             ></path>
           </svg>
-          <svg id = "notChecked" class = "notChecked"
+          <svg
+            id="notChecked"
+            class="notChecked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -127,8 +185,10 @@
           </svg>
           <p>Contains between 8 to 15 letters</p>
         </div>
-        <div class="number1" id = "number1">
-          <svg id = "checked" class = "checked"
+        <div class="number1" id="number1">
+          <svg
+            id="checked"
+            class="checked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -145,7 +205,9 @@
               d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"
             ></path>
           </svg>
-          <svg id = "notChecked" class = "notChecked"
+          <svg
+            id="notChecked"
+            class="notChecked"
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -173,16 +235,45 @@
         type="password"
         placeholder="Enter password"
         name="password"
-        id = "signInPassword"
-        minlength = "8"
-        maxlength = "15"
+        id="signInPassword"
+        minlength="8"
+        maxlength="15"
         pattern="[a-zA-Z0-9]+"
         required
       />
-      <input type="submit" value="Sign In" class="subm" id = "submitButton" disabled />
+      <input
+        type="submit"
+        value="Sign In"
+        class="subm"
+        id="submitButton"
+        disabled
+      />
     </form>
     <div class="topLeft"></div>
   </div>
+
+  <a href="/logout" class="logout">
+    Logout
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-logout"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+      />
+      <path d="M9 12h12l-3 -3" />
+      <path d="M18 15l3 -3" />
+    </svg>
+  </a>
 </div>
 
 <script src="/js/logIn.js" defer></script>
