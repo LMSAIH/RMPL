@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
 .innerContent{
     width:90%;
     margin-left:5%;
@@ -51,7 +53,7 @@
     font-family: 'jaldi';
     font-size:1.8vw;
     font-weight:bold;
-    padding: 10px 5vw 10px 5vw;
+    padding: 10px 1vw 10px 1vw;
     background-color:#FCA311;
     border:none;
     border-radius:5px;
@@ -96,6 +98,7 @@
 .otherValues{
     display:flex;
     flex-direction:row;
+    justify-content: space-around;
 }
 
 .otherValues > div{
@@ -106,6 +109,8 @@
     background-color: white;
     box-shadow: 6px 6px 0px #c7c7c7,
         -6px -6px 0px #ffffff;
+        opacity:0.9;
+        transition:0.5s;
         opacity:0.9;
         transition:0.5s;
 }
@@ -122,11 +127,34 @@
 
 .comment{
    
-    width: 25%;
+    width: 65%;
+    padding:1%;
     background-color: white;
     box-shadow: 6px 6px 0px #c7c7c7,
         -6px -6px 0px #ffffff;
         opacity:0.9;
         transition:0.5s;
+}
+
+.star{
+    margin-left:10px;
+    color:gold;
+}
+
+.otherValues .tag{
+    text-align:center;
+    background-color: #FCA311;
+    
+}
+
+.otherValues .number{
+    text-align:center;
+    font-size:2.5vw;
+    background-color:#9a9898;
+}
+
+.otherValues > div:hover{
+    opacity:1;
+    transform:translateY(-5px);
 }
 

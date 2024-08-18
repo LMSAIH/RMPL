@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
 .innerContent {
     font-family: 'jaldi';
     width: 90%;
@@ -110,4 +112,17 @@
 #rate .comment{
     margin-left:0;
     text-align:left;
+}
+
+.submitForm{
+    width:10%;
+    font-family:'jaldi';
+    font-size:3vw;
+    background-color: #90EE90;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.submitForm:hover{
+    opacity:0.8;
 }
