@@ -21,7 +21,8 @@
         <%= `/rate/${result._id}` %> 
         <% } else { %>
            <%= '/logIn' %> 
-       <% } %>"> Leave a Rating </a> 
+       <% } %>"> Leave a Rating<span class = "star">&#9733; &#9733; &#9733; </span> </a> 
+      
     </div>
   </div>
 
@@ -39,7 +40,7 @@
       <img class = "cardImage" alt = "workload" src = "/images/workload.svg"> 
     </div>
     <h3 class = "tag"> Workload </h3>
-    <p class = "number">  <% if (result.workload == 0){%> N/A <%} else { %> <%= Number.parseFloat(result.workload/result.workload).toFixed(1) %>/5.0
+    <p class = "number">  <% if (result.workload == 0){%> N/A <%} else { %> <%= Number.parseFloat(result.workload/result.ratings).toFixed(1) %>/5.0
       <%}%> </p>
     </div>
   </div>
@@ -47,12 +48,13 @@
   <h2> Comment Section </h2>
   <div class = "comments"> 
 
-    <% for(let i = 0; i<result.comments.length; i++){%>
+    <% if (result.comments.length<1){%>
+      <h3> There seems to be no comments yet.. Be the first!</h3>
+    <%}%>
+    <% for(let i = result.comments.length-1; i>=0; i--){%>
       
     <div class = "comment"> 
-      <h3 class = "author"> <%= result.comments[i].author %> &#x2022; <span class = 'subject'><%= result.comments[i].subject %></span></h3>
-
-      <p class = 'date'> <%= result.comments[i].date %> </p>
+      <h3 class = "author"> <%= result.comments[i].author %> &#x2022; <span class = 'subject'><%= result.comments[i].subject %></span>  &#x2022;  <%= result.comments[i].date.toDateString() %></h3>
       <p class = "content"> <%= result.comments[i].content %> </p>
     </div>
   <%}%>

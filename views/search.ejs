@@ -6,10 +6,10 @@
     <h1> No results found </h1>
  <% } %>
 
- <div class = "content"> 
+ <div class = "content" id = "content"> 
     <% for(let i = 0; i<data.length;i++){ %>
       <a class = "prof" href = "/search/<%= data[i]._id %>">
-    <div class = "professor">   
+    <div class = "professor" id = "professor">   
       <div class = "info">
             <h3 class = "name"> <%= data[i].name %> </h3>
             <h4 class = "department"> <%= data[i].department %> Department </h4>
@@ -18,18 +18,18 @@
             <div class ="rating"><p>Rating</p><p class = "number"><% if(data[i].overall == 0){ %>
                <%= "N/A" %>
             <% } else { %>
-               <%= data[i].overall %>
+               <%= Number.parseFloat(data[i].overall/data[i].ratings).toFixed(1) %>
             <%} %>
             </p></div>
             <div class ="difficulty"><p>Difficulty</p><p class = "number"><% if(data[i].difficulty == 0){ %>
                <%= "N/A" %>
             <% } else { %>
-               <%= data[i].difficulty %>
+               <%=  Number.parseFloat(data[i].difficulty/data[i].ratings).toFixed(1) %>
             <%} %></p></div>
             <div class ="workload"><p>Workload</p><p class = "number"><% if(data[i].workload == 0){ %>
                <%= "N/A" %>
             <% } else { %>
-               <%= data[i].workload %>
+               <%=  Number.parseFloat(data[i].workload/data[i].ratings).toFixed(1)%>
             <%} %></p></div>
          </div>
          <p> Out of <%= data[i].ratings %> ratings </p>
@@ -38,3 +38,5 @@
    </a>
     <%}%>
  </div>
+
+ <script src = "/js/search.js" defer> </script>
