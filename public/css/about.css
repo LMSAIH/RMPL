@@ -7,6 +7,7 @@
 .top{
     margin:auto;
     margin-top:5%;
+    margin-bottom:5%;
     text-align:center;
     width:fit-content;
     background-color: white;
@@ -24,3 +25,82 @@
     padding:1vw;
 }
 
+.innerContent{
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.innerContent h2{
+    font-size:2.5vw;
+    width:20%;
+    text-align:Center;
+    color:white;
+    border-radius:5px;
+}
+
+.whoAreWe{
+    background-color:#FCA311;
+    box-shadow: 1vw 1vw 0px #12213D,
+    -1vw -1vw 0px #12213D;
+    text-shadow: 1px 1px #12213D;
+}
+
+.whatWeDo{
+    background-color:#12213D;
+    margin-left:80%;
+    box-shadow: 1vw 1vw 0px #FCA311,
+    -1vw -1vw 0px #FCA311;
+    text-shadow: 1px 1px #FCA311;
+}
+
+.ourGoal{
+
+    background-color: #FCA311;
+    box-shadow: 1vw 1vw 0px #12213D,
+    -1vw -1vw 0px #12213D;
+    text-shadow: 1px 1px #12213D;
+}
+
+.descriptionLeft {
+
+    width:100%;
+    display:flex;
+    flex-direction: row;
+
+}
+
+.descriptionLeft p{
+    margin-top:auto;
+    margin-bottom:auto;
+    width: 50%;
+    font-size:1.3vw;
+    font-weight:bold;
+}
+
+.descriptionLeft img{
+    width: 30%;
+    margin-left:10%;
+}
+
+.descriptionRight{
+    
+    width:100%;
+    display:flex;
+    flex-direction: row;
+
+}
+
+.descriptionRight p{
+    
+    margin-top:auto;
+    margin-bottom:auto;
+    width: 50%;
+    font-size:1.3vw;
+    font-weight:bold;
+
+}
+
+.descriptionRight img{
+    width:30%;
+    margin-right:10%;
+}
