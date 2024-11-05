@@ -29,6 +29,7 @@ const authMiddleWare = (req, res, next) => {
 };
 
 const checkAuth = async (req, res, next) => {
+
   const token = req.cookies.token;
 
   if (!token) {
@@ -81,7 +82,7 @@ const authenticate = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ userId: user._id }, jwtSecret);
+    const token = jwt.sign({ userId: user._id }, jwtSecret, {expiresIn: '1d'});
     res.cookie("token", token, { httpOnly: true });
 
     res.redirect("/");
