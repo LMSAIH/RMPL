@@ -7,6 +7,7 @@ const authMiddleWare = controllers.authMiddleWare;
 const checkAuth = controllers.checkAuth;
 //Password protect
 
+//routes forthe app
 router.get("/admin", authMiddleWare, controllers.admin);
 
 router.get("/", checkAuth, controllers.getIndex);
