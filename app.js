@@ -7,7 +7,9 @@ const connectDB = require('./server/config/db');
 const session = require('express-session');
 
 
+
 const app = express();
+//change the port into an env file
 const PORT =  process.env.PORT || 5000;
 
 connectDB();
