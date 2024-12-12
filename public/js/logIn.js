@@ -1,6 +1,6 @@
 let loginForm = document.getElementById("loginForm");
 
-//loginf form logic to gather the information
+//loging form logic to gather the information
 loginForm.addEventListener("keydown", (e) => {
   let submitLogIn = document.getElementById("logButton");
   let username = document.getElementById("loginUser");
