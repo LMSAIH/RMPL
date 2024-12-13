@@ -15,6 +15,7 @@ loginForm.addEventListener("keydown", (e) => {
 
 let signInForm = document.getElementById("signInForm");
 
+//changed container
 let checkboxesContainer = document.getElementById("checkboxes");
 
 signInForm.addEventListener("keydown", (e) => {
